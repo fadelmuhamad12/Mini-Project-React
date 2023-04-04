@@ -1,0 +1,34 @@
+/* .myBg{
+    height: 100vh;
+    background: url("../assets/images/background.jpg");
+    background-size: cover;
+} */
+.intro {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 2px 2px black;
+    letter-spacing: 2px;
+}
+.trending{
+    height: auto;
+    background: linear-gradient(179.71deg, #273343 0.25%, #161E29 84.69%);
+    background-size: cover;
+}
+.movieImages {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    /* transition: all 0.5s ease;
+    transform: scale(1); */
+}
+
+.judul {
+    color: #FFC907;
+  
+}
