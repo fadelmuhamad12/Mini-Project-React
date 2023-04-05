@@ -1,8 +1,8 @@
 import './App.css';
 import NavigationBar from './components/NavigationBar';
 import "./style/landingpage.css"
-import Intro from './components/Intro';
-import Trending from './components/Trending';
+import Intro from './components/Carousel';
+import Favorite from './components/Favorite';
 
 
 
@@ -17,7 +17,7 @@ function App() {
      </div>
     {/* Intro End */}
     <div className='trending'> 
-    <Trending />
+    <Favorite />
     
     </div>
 

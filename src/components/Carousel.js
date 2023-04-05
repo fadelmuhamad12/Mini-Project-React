@@ -1,5 +1,8 @@
 import { Container, Col, Row, Button, Carousel} from "react-bootstrap";
 import lastofus from "../assets/images/lastofus.jpg";
+import themartian from "../assets/images/themartian.jpg"
+import interstellar from "../assets/images/interstellar.jpg"
+
 
 
 const Intro = () => {
@@ -19,24 +22,24 @@ const Intro = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={lastofus}
+          src={themartian}
           alt="Second slide"
         />
 
         <Carousel.Caption>
-        <h3>The Last Of US</h3>
+        <h3>The Martian</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={lastofus}
+          src={interstellar}
           alt="Third slide"
         />
 
         <Carousel.Caption>
-        <h3>The Last Of US</h3>
+        <h3>InterStellar</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
