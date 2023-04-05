@@ -1,308 +1,50 @@
+import { useEffect, useState, } from "react";
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
-import obxImage from "../assets/favorite/obx.jpg";
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import axios from "axios";
 
 const Favorite = () => {
+  const [popular, setPopular] = useState([])
+
+
+  useEffect(() => {
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=1a0d8643de94a0bdad2ec29735e6c342&language=en-US&page=1`, {
+      params: {
+        api_key: process.env.REACT_APP_TMDB_KEY
+      }
+    }).then((response) => {
+
+      setPopular(response.data.results)
+    })
+  }, [])
 
   return (
-
-
-    <div>
+    <div >
       <Container>
         <Row>
-        <h1 className="favoritemovies mt-5">Favorite</h1>
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2}  className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <h1 className="favoritemovies mt-5">Continue To Watch</h1>
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2}  className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <h1 className="favoritemovies mt-5">Best Series</h1>
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2}  className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <h1 className="favoritemovies mt-5">Best Movies</h1>
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2}  className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-
-          <Col s ={4} sm = {4} md={4} lg = {2} xl= {2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-1 ">
-            <Card className="text-dark text-center movieImages">
-              <div className="listcard">
-                <Image src={obxImage} alt="Obx" className="movieImages" />
-                <div className="judul mt-2">
-                  <Card.Title> Outer Banks</Card.Title>
-                </div>
-              </div>
-            </Card>
-          </Col>
-
-          
-
-
+          <h1 className="favoritemovies mt-4">Favorite</h1>
+          {popular.map((result, index) => {
+            return (
+              <Col s={4} sm={4} md={4} lg={3} xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 " key={index}>
+                <Card className="text-center cards bg-transparent ">
+                  <div className="listcard">
+                    <Image src={`${process.env.REACT_APP_IMG_URL}/${result.poster_path}`} alt="Obx" className="moviecardImages rounded" />
+                    <div className="judul mt-2">
+                      <Card.Title> {result.title}</Card.Title>
+                    </div>
+                    <Card.Text className="overview">Id: {result.id}</Card.Text>
+                    <Card.Text className="overview">Popularity: <br />{result.popularity}</Card.Text>
+                    {/* <Card.Text>{result.overview}</Card.Text> */}
+                  </div>
+                </Card>
+              </Col>
+            )
+          })}
 
         </Row>
       </Container>
     </div>
+
+
   );
 };
 

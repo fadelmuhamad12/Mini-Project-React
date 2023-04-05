@@ -4,8 +4,8 @@ return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" >
       <Container>
         <Navbar.Brand href="#home">F2k.Stream</Navbar.Brand>
-        <Navbar.Toggle z-index-2 aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse z-index-2 id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#features">Home</Nav.Link>
             <Nav.Link href="#pricing">Series</Nav.Link>

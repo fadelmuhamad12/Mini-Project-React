@@ -3,6 +3,12 @@
     background: url("../assets/images/background.jpg");
     background-size: cover;
 } */
+
+.fullcover {
+    height: auto;
+    background: linear-gradient(179.71deg, #273343 0.25%, #161E29 84.69%);
+    background-size: cover;
+}
 .intro {
     display: flex;
     justify-content: end;
@@ -17,19 +23,22 @@
 }
 .trending{
     height: auto;
-    background: linear-gradient(179.71deg, #273343 0.25%, #161E29 84.69%);
     background-size: cover;
 }
-.movieImages {
-    width: 150px;
-    height: 200px;
-    border-radius: 10px;
+
+
+
+.moviecardImages {
+    width: 160px;
+    height: 250px;
+
     /* transition: all 0.5s ease;
     transform: scale(1); */
 }
 
 .judul {
     color: #FFC907;
+  
   
 }
 
@@ -43,4 +52,12 @@
     border-top: none;
     border-bottom: none;
    
+}
+
+.overview {
+    color: white;
+}
+
+.soon{
+    
 }
