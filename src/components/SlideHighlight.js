@@ -1,7 +1,10 @@
-import { Container, Col, Row, Button, Carousel} from "react-bootstrap";
+import { Container, Col, Row, Button, Carousel, Image} from "react-bootstrap";
 import lastofus from "../assets/images/lastofus.jpg";
 import themartian from "../assets/images/themartian.jpg"
 import interstellar from "../assets/images/interstellar.jpg"
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 
 
 
@@ -46,6 +49,8 @@ const Intro = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+
+
     // <div className="intro mt-5">
     //   <Container className="text-white d-flex justify-content-center align-item-center text-center">
     //     <Row>

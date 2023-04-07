@@ -1,9 +1,9 @@
 import {Navbar, Container, Nav, NavDropdown, Form} from "react-bootstrap" 
 const NavigationBar = () => {
 return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" >
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navigationbar" >
       <Container>
-        <Navbar.Brand href="#home">F2k.Stream</Navbar.Brand>
+        <Navbar.Brand href="#home" >F2k.<span className="stream">Stream</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

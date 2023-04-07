@@ -5,59 +5,93 @@
 } */
 
 .fullcover {
-    height: auto;
-    background: linear-gradient(179.71deg, #273343 0.25%, #161E29 84.69%);
-    background-size: cover;
+  background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
+  background-size: cover;
+}
+
+nav.navigationbar {
+  background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
+}
+
+.stream {
+  color: #ffc907;
+}
+/* a.navbar-brand {
+    color: blue ;
+} */
+a.nav-link:hover {
+  color: #ffc907;
 }
 .intro {
-    display: flex;
-    justify-content: end;
-    align-items: end;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 .title {
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 1;
-    text-shadow: 2px 2px black;
-    letter-spacing: 2px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 2px 2px black;
+  letter-spacing: 2px;
 }
-.trending{
-    height: auto;
-    background-size: cover;
+.trending {
+  height: auto;
+  background-size: cover;
 }
 
-
+.listcard {
+  cursor: pointer;
+}
 
 .moviecardImages {
-    width: 160px;
-    height: 250px;
+  width: 160px;
+  height: 250px;
 
-    /* transition: all 0.5s ease;
+  /* transition: all 0.5s ease;
     transform: scale(1); */
 }
 
 .judul {
-    color: #FFC907;
-  
-  
+  color: #ffc907;
 }
 
 .favoritemovies {
-    text-shadow: 2px 2px black;
-    color: #FFC907;
-    font-size: 30px;
-    margin-left: 20px;
-    border: 3px solid ;
-    border-right: none;
-    border-top: none;
-    border-bottom: none;
-   
+  text-shadow: 2px 2px black;
+  color: #ffc907;
+  font-size: 30px;
+  margin-left: 20px;
+  border: 3px solid;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
 }
 
 .overview {
-    color: white;
+  color: white;
+  
 }
 
-.soon{
+/* BAGIAN HIGHLIGHT */
+
+.Highlight-content {
+  padding: 25px;
+  height: 500px;
+  background-size: cover;
+  
+
+}
+.summaryHighlight {
+    color: white;
+    margin-top: 250px;
     
+}
+.titleHighlight {
+
+ 
+}
+
+.overviewHighlight {
+  
+  font-size: 15px;
+  text-align: left;
 }
