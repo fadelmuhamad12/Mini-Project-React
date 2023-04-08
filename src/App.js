@@ -6,25 +6,30 @@ import Favorite from './components/Favorite';
 import Upcoming from './components/Upcoming';
 import Highlight from './components/Highlight';
 import { Carousel } from 'bootstrap';
-
+import Continue from './components/Continue';
+import { useState, useEffect } from "react";
 
 
 
 
 function App() {
-
+  const [showMovie, setShowMovie] = useState([{}]);
   return (
   
     <div className='fullcover'>
       <div>
         <div className='myBg'>
           <NavigationBar />
-          <Highlight/>
+          <Highlight showMovie={showMovie} setShowMovie={setShowMovie}/>
           {/* <Intro /> */}
         </div>
         <div className='trending'>
-          <Favorite />
+          <Favorite setShowMovie={setShowMovie}/>
         </div>
+          <div className='continue'>
+          <Continue />
+          </div>
+
 
         <div className='soon'>
           <Upcoming />

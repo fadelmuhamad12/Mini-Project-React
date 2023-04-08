@@ -1,31 +1,33 @@
 import axios from "axios";
-import { Card, Container, Row, Col, Image } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-const Highlight = () => {
-  const [selectedMovie, setSelectedMovie] = useState([{}]);
+const Highlight = ({showMovie, setShowMovie}) => {
+  
   const REACT_APP_IMG_URL = "https://image.tmdb.org/t/p/original";
   useEffect(() => {
     axios({
       method: "get",
       url: "https://api.themoviedb.org/3/movie/popular?api_key=1a0d8643de94a0bdad2ec29735e6c342&language=en-US&page=1",
     }).then(function (response) {
-      setSelectedMovie(response.data.results[0]);
+      setShowMovie(response.data.results[0]);
 
     });
-  });
+  },[]);
 
   return (
-    <Container>
+   
       <div className="main-content">
-        <div className="Highlight-content" style={{backgroundImage: `url(${REACT_APP_IMG_URL}${selectedMovie.backdrop_path})`,}}>
+        <div className="Highlight-content" style={{backgroundImage: `url(${REACT_APP_IMG_URL}${showMovie.backdrop_path})`,}}>
             <div className="summaryHighlight">
-          <h1 className="titleHighlight">{selectedMovie.title}</h1>
-          <p className="overviewHighlight">{selectedMovie.overview}</p>
+          <h1 className="titleHighlight">{showMovie.title}</h1>
+          <p className="overviewHighlight">{showMovie.overview}</p>
+          <p className="overviewHighlight">Rating: {showMovie.popularity}</p>
+          <p className="overviewHighlight">Id: {showMovie.id}</p>
+
           </div>
         </div>
       </div>
-    </Container>
+    
   );
 };
 

@@ -11,7 +11,7 @@ return (
             <Nav.Link href="#pricing">Series</Nav.Link>
             <Nav.Link href="#pricing">Movies</Nav.Link>
             <Nav.Link href="#pricing">Premium +</Nav.Link>
-            <Nav.Link href="#pricing">Contact Us +</Nav.Link>
+          
 
 
           </Nav>
