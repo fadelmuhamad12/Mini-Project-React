@@ -21,7 +21,7 @@ const Favorite = ({setShowMovie}) => {
       <Container>
         <Row>
           <h1 className="favoritemovies mt-4">Poupular</h1>
-          {popular.slice(2).map((result) => {
+          {popular.map((result) => {
             return (
               <Col xs={6} s={4}sm={4} md={4} lg={3} xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 " >
                 <Card className="text-center cards bg-transparent" onClick={()=> setShowMovie(result)}>

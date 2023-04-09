@@ -7,10 +7,10 @@ return (
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#pricing">Series</Nav.Link>
-            <Nav.Link href="#pricing">Movies</Nav.Link>
-            <Nav.Link href="#pricing">Premium +</Nav.Link>
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#series">Series</Nav.Link>
+            <Nav.Link href="#movies">Movies</Nav.Link>
+            <Nav.Link href="#premium">Premium +</Nav.Link>
           
 
 
