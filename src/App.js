@@ -1,13 +1,12 @@
 import './App.css';
 import NavigationBar from './components/NavigationBar';
 import "./style/landingpage.css"
-import Intro from './components/SlideHighlight';
+
 import Favorite from './components/Favorite';
 import Upcoming from './components/Upcoming';
 import Highlight from './components/Highlight';
-import { Carousel } from 'bootstrap';
 import Continue from './components/Continue';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 

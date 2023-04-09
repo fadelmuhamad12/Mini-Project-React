@@ -1,9 +1,8 @@
-import { Container, Col, Row, Button, Carousel, Image} from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import lastofus from "../assets/images/lastofus.jpg";
 import themartian from "../assets/images/themartian.jpg"
 import interstellar from "../assets/images/interstellar.jpg"
-import { useEffect, useState } from "react";
-import axios from "axios";
+
 
 
 

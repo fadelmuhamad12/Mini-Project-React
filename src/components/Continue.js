@@ -1,6 +1,5 @@
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
 import lastofus from "../assets/images/lastofus.jpg";
-import themartian from "../assets/images/themartian.jpg";
 import interstellar from "../assets/images/interstellar.jpg";
 import batman from "../assets/images/batman.jpg";
 
