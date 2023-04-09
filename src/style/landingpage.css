@@ -17,11 +17,11 @@ div.cards {
 a.nav-link:hover {
   color: #ffc907;
 }
-.intro {
+/* .intro {
   display: flex;
   justify-content: end;
   align-items: end;
-}
+} */
 .title {
   font-size: 30px;
   font-weight: bold;

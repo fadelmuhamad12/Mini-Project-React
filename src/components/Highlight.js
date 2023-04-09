@@ -12,7 +12,7 @@ const Highlight = ({showMovie, setShowMovie}) => {
       setShowMovie(response.data.results[0]);
 
     });
-  },[]);
+  }, );
 
   return (
    
