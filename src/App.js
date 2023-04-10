@@ -7,6 +7,9 @@ import Highlight from './components/Highlight';
 import Continue from './components/Continue';
 import { useState } from "react";
 import Announcement from './components/alert';
+import ShowCards from './components/ModalCards';
+
+
 // import FormLogin from './components/Login';
 
 
@@ -14,17 +17,19 @@ import Announcement from './components/alert';
 
 function App() {
   const [showMovie, setShowMovie] = useState([{}]);
+
+
   return (
   
     <div className='fullcover'>
       <div>
         <div className='myBg'>
           <NavigationBar />
-          {/* <FormLogin /> */}
           <Announcement />
           <Highlight showMovie={showMovie} setShowMovie={setShowMovie}/>
           {/* <Intro /> */}
         </div>
+        <ShowCards />
         <div className='trending'>
           <Favorite setShowMovie={setShowMovie}/>
         </div>

@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
 import axios from "axios";
 
+
 const Favorite = ({setShowMovie}) => {
   const [popular, setPopular] = useState([]);
+  
 
   useEffect(() => {
     axios({
@@ -21,11 +23,12 @@ const Favorite = ({setShowMovie}) => {
       <Container>
         <Row>
           <h1 className="favoritemovies mt-4">Poupular</h1>
-          {popular.map((result) => {
+          {popular.slice(0,18).map((result) => {
             return (
               <Col xs={6} s={4}sm={4} md={4} lg={3} xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 " >
-                <Card className="text-center cards bg-transparent" onClick={()=> setShowMovie(result)}>
-                  <div className="listcard">
+               
+                <Card className="text-center cards bg-transparent" onClick={()=> setShowMovie(result)} >
+                  <div className="listcard" >
                     <Image
                       src={`${process.env.REACT_APP_IMG_URL}/${result.poster_path}`}
                       alt="Obx"
