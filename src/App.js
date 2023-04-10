@@ -7,7 +7,7 @@ import Highlight from './components/Highlight';
 import Continue from './components/Continue';
 import { useState } from "react";
 import Announcement from './components/alert';
-import ShowCards from './components/ModalCards';
+
 
 
 // import FormLogin from './components/Login';
@@ -17,6 +17,7 @@ import ShowCards from './components/ModalCards';
 
 function App() {
   const [showMovie, setShowMovie] = useState([{}]);
+
 
 
   return (
@@ -29,7 +30,7 @@ function App() {
           <Highlight showMovie={showMovie} setShowMovie={setShowMovie}/>
           {/* <Intro /> */}
         </div>
-        <ShowCards />
+     
         <div className='trending'>
           <Favorite setShowMovie={setShowMovie}/>
         </div>

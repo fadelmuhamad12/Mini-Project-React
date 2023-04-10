@@ -1,6 +1,6 @@
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
 import lastofus from "../assets/images/lastofus.jpg";
-import interstellar from "../assets/images/interstellar.jpg";
+// import interstellar from "../assets/images/interstellar.jpg";
 import batman from "../assets/images/batman.jpg";
 
 
@@ -40,17 +40,17 @@ const Continue = () => {
               </Card>
             </Col>
 
-            <Col xs={6} s={4} sm={4} md={4} lg={4} xl={4} className="justify-content-center text-align-center d-flex mt-3 moviesWrapperContinue ">
+            {/* <Col xs={6} s={4} sm={4} md={4} lg={4} xl={4} className="justify-content-center text-align-center d-flex mt-3 moviesWrapperContinue ">
               <Card className="text-center cards bg-transparent ">
                 <div className="card continue bg-transparent">
                   <Image src={interstellar}  className="imgContinue"/>
                   <div className="judul mt-2">
                     <Card.Title> Interstellar</Card.Title>
                   </div>
-                  {/* <Card.Text>{result.overview}</Card.Text> */}
+            
                 </div>
               </Card>
-            </Col>
+            </Col> */}
 
           </div>
         </div>

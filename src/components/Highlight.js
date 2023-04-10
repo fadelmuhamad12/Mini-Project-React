@@ -21,7 +21,7 @@ const Highlight = ({showMovie, setShowMovie}) => {
             <div className="summaryHighlight">
           <h1 className="titleHighlight">{showMovie.title}</h1>
           <p className="overviewHighlight">{showMovie.overview}</p>
-          <p className="overviewHighlight">Rating: {showMovie.popularity}</p>
+          <p className="overviewHighlight">Rating: {showMovie.vote_average}</p>
           <p className="overviewHighlight">Id: {showMovie.id}</p>
 
           </div>

@@ -108,3 +108,33 @@ div.fade.alert{
   border-radius: 0px;
   text-align: center;
 }
+
+/* Untuk Modal Form Login */
+.modalForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Modals */
+.modal-background {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  border-radius: 15px;
+
+}
+
+div.modal-content {
+  background: #161e29;
+  width: 200%;
+
+}
+
+
+
+
+
+/* MEDIA QUERY */
+
