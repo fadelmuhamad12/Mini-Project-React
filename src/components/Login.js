@@ -7,34 +7,34 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
+  // const handleEmail = (e) => {
+  //   setEmail(e.target.value);
+  // };
 
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
+  // const handlePassword = (e) => {
+  //   setPassword(e.target.value);
+  // };
 
-  const handleApi = (e) => {
-    console.log({ email, password });
-    axios
-      .post(
-        "https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=1a0d8643de94a0bdad2ec29735e6c342",
-        {
-          email: email,
-          password: password,
-        }
-      )
-      .then((result) => {
-        console.log(result.data);
-        alert("success");
-        localStorage.setItem("token", result.data.token);
-      })
-      .catch((error) => {
-        alert("error");
-        console.log(error);
-      });
-  };
+  // const handleApi = (e) => {
+  //   console.log({ email, password });
+  //   axios
+  //     .post(
+  //       "https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=1a0d8643de94a0bdad2ec29735e6c342",
+  //       {
+  //         email: email,
+  //         password: password,
+  //       }
+  //     )
+  //     .then((result) => {
+  //       console.log(result.data);
+  //       alert("success");
+  //       localStorage.setItem("token", result.data.token);
+  //     })
+  //     .catch((error) => {
+  //       alert("error");
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <div>
