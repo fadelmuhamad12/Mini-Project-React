@@ -119,8 +119,7 @@ div.fade.alert{
 
 /* Modals */
 .modal-background {
-  width: 100%;
-  height: 100%;
+  height: 50%;
   background-position: center;
   border-radius: 15px;
 
@@ -128,11 +127,24 @@ div.fade.alert{
 
 div.modal-content {
   background: #161e29;
-  width: 200%;
+  width: 100%;
+  color: white;
+
 
 }
 
+div.modal-title.h4 {
+  margin-left: 40%;
+}
 
+div.titlePremium.modal-title.h4 {
+  color: white;
+  margin-left: 30%;
+}
+
+.btn-subs {
+  margin-left: 40%;
+}
 
 
 

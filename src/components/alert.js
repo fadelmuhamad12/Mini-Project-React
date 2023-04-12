@@ -7,7 +7,7 @@ function Announcement() {
         'secondary',
       ].map((variant) => (
         <Alert key={variant} variant={variant}>
-         4K Resolution is now available on Premium+ Go Subs Now
+         4K Resolution is now available on Premium+. Subs now to get the benefit
         </Alert>
       ))}
     </>

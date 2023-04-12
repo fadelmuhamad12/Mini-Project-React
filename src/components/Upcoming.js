@@ -75,6 +75,7 @@ const ComingSoon = () => {
               >
         
                 <Col>
+               
                   <Image
                     src={`${process.env.REACT_APP_IMG_URL}/${selectedMovie.poster_path}`}
                     alt="Obx"
@@ -89,6 +90,7 @@ const ComingSoon = () => {
                     Popularity: {selectedMovie.vote_average}
                   </p>
                 </Col>
+                
               </div>
             </Row>
           )}

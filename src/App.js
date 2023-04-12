@@ -7,10 +7,7 @@ import Highlight from './components/Highlight';
 import Continue from './components/Continue';
 import { useState } from "react";
 import Announcement from './components/alert';
-
-
-
-// import FormLogin from './components/Login';
+import Login from './components/Login';
 
 
 
@@ -21,7 +18,7 @@ function App() {
 
 
   return (
-  
+ 
     <div className='fullcover'>
       <div>
         <div className='myBg'>
@@ -30,21 +27,19 @@ function App() {
           <Highlight showMovie={showMovie} setShowMovie={setShowMovie}/>
           {/* <Intro /> */}
         </div>
-     
         <div className='trending'>
           <Favorite setShowMovie={setShowMovie}/>
         </div>
           <div className='continue'>
           <Continue />
           </div>
-
-
         <div className='soon'>
           <Upcoming />
         </div>
 
       </div>
     </div>
+  
    
   );
 }
