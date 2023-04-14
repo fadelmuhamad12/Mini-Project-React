@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
+import '../style/landingpage.css';
+
+
+
 
 const ComingSoon = () => {
   const REACT_APP_IMG_URL = "https://image.tmdb.org/t/p/original";
   const [upcoming, setUpcoming] = useState([]);
+
   const [modal, showModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
@@ -27,7 +32,10 @@ const ComingSoon = () => {
     });
   }, []);
 
+ 
+ 
   return (
+    <div className="PopularMovies">
     <Container>
       <Row>
         <h1 className="favoritemovies mt-4">Upcoming</h1>
@@ -62,8 +70,7 @@ const ComingSoon = () => {
         })}
       </Row>
       <Modal show={modal} onHide={handleShowClose} keyboard={false}>
-      <Modal.Header closeButton>
-                </Modal.Header>
+        <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
           {selectedMovie && (
             <Row>
@@ -73,9 +80,7 @@ const ComingSoon = () => {
                   backgroundImage: `url(${REACT_APP_IMG_URL}${selectedMovie.backdrop_path})`,
                 }}
               >
-        
                 <Col>
-               
                   <Image
                     src={`${process.env.REACT_APP_IMG_URL}/${selectedMovie.poster_path}`}
                     alt="Obx"
@@ -90,13 +95,13 @@ const ComingSoon = () => {
                     Popularity: {selectedMovie.vote_average}
                   </p>
                 </Col>
-                
               </div>
             </Row>
           )}
         </Modal.Body>
       </Modal>
     </Container>
+    </div>
   );
 };
 

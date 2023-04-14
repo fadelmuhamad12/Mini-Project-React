@@ -8,6 +8,16 @@ nav.navigationbar {
   background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
 }
 
+div.PopularMovies {
+  background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
+
+}
+
+div.FavoriteMovies{
+  background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
+
+}
+
 .stream {
   color: #ffc907;
 }
@@ -146,7 +156,9 @@ div.titlePremium.modal-title.h4 {
   margin-left: 40%;
 }
 
-
+button.btn.btn-primary {
+  margin-left: 40%;
+}
 
 /* MEDIA QUERY */
 

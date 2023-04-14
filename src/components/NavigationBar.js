@@ -1,14 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar, Container, Nav, Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
+
 
 const NavigationBar = () => {
   const [modal, showModal] = useState(false);
   const [modalPremium, showModalPremium] = useState(false);
-  const [username, setUsername] = useState("fadelmuhamadp");
-  const [password, setPassword] = useState("");
 
   // Ini Buat Button menampilkan modal apabila akun di klik
   const handleModalShow = () => {
@@ -18,6 +18,7 @@ const NavigationBar = () => {
   const handleModalClose = () => {
     showModal(false);
   };
+  // END--- Ini Buat Button menampilkan modal apabila akun di klik
 
   // MODAL UNTUK PREMIUM+
   const clickedModalShow = () => {
@@ -27,59 +28,7 @@ const NavigationBar = () => {
   const clickedModalClose = () => {
     showModalPremium(false);
   };
-
-  // UNTUK FITUR LOGIN
-  const handleUsername = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  // const login = (e) => {
-  //   axios ({
-  //     method: "post",
-  //     url: "https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=1a0d8643de94a0bdad2ec29735e6c342",
-  //     data: {
-  //       username: username,
-  //       password: password,
-  //     }.then (function(result) {
-  //       console.log(result.data);
-  //       alert("success");
-  //       localStorage.setItem("token", result.data.request_token);
-  //       handleModalClose();
-  //     }).catch((error) => {
-  //       alert("error");
-  //       console.log(error);
-  //     })
-      
-  //   })
-  // }
-
-  const handleApi = (e) => {
-    e.preventDefault();
-    console.log({ username, password });
-    axios
-      .post(
-        "https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=1a0d8643de94a0bdad2ec29735e6c342",
-        {
-          username: username,
-          password: password,
-         
-        }
-      )
-      .then((result) => {
-        console.log(result.data);
-        alert("success");
-        localStorage.setItem("token", result.data.request_token);
-        handleModalClose();
-      })
-      .catch((error) => {
-        alert("error");
-        console.log(error);
-      });
-  };
+  // END-----MODAL UNTUK PREMIUM+
 
   return (
     <Navbar
@@ -96,9 +45,9 @@ const NavigationBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#series">Series</Nav.Link>
-            <Nav.Link href="#series">Movies</Nav.Link>
+            <Link to="/" className="nav-link ">Home</Link>
+            <Link to="/series" className="nav-link">Series</Link>
+            <Link to="/movies" className="nav-link ">Movies</Link>
             <Nav.Link href="#premium" onClick={clickedModalShow}>
               Premium +
             </Nav.Link>
@@ -125,28 +74,19 @@ const NavigationBar = () => {
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={handleApi}>
+          <Form>
+            {/* {`${reqToken} ${createSessionWithLogin} ${createSession} ${getAccDetails}`} */}
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Username/Email</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Username/Email"
-                value={username}
-                onChange={handleUsername}
-              />
+              <Form.Control type="text" placeholder="Enter Username/Email" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={handlePassword}
-              />
+              <Form.Control type="password" placeholder="Password" />
             </Form.Group>
             <Button variant="primary" type="submit">
-              Submit
+              Login
             </Button>
           </Form>
         </Modal.Body>
@@ -168,7 +108,7 @@ const NavigationBar = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Name:</Form.Label>
-              <Form.Control type="number" placeholder="Input Your Name Here" />
+              <Form.Control type="text" placeholder="Input Your Name Here" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">

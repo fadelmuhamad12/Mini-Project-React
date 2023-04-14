@@ -7,12 +7,13 @@ const Highlight = ({showMovie, setShowMovie}) => {
   useEffect(() => {
     axios({
       method: "get",
-      url: "https://api.themoviedb.org/3/movie/popular?api_key=1a0d8643de94a0bdad2ec29735e6c342&language=en-US&page=1",
+      url: "https://api.themoviedb.org/3/movie/top_rated?api_key=1a0d8643de94a0bdad2ec29735e6c342&language=en-US&page=1",
     }).then(function (response) {
       setShowMovie(response.data.results[0]);
 
     });
   }, [setShowMovie]);
+
 
   return (
    

@@ -19,10 +19,10 @@ const Favorite = ({setShowMovie}) => {
 
 
   return (
-    <div>
+    <div className="FavoriteMovies">
       <Container>
         <Row>
-          <h1 className="favoritemovies mt-4">Poupular</h1>
+          <h1 className="favoritemovies mt-4">Popular</h1>
           {popular.slice(0,18).map((result) => {
             return (
               <Col xs={6} s={4}sm={4} md={4} lg={3} xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 " >
