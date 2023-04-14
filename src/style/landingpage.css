@@ -8,12 +8,13 @@ nav.navigationbar {
   background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
 }
 
-div.PopularMovies {
+
+.seriesPage {
   background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
 
 }
 
-div.FavoriteMovies{
+.moviesPage {
   background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
 
 }

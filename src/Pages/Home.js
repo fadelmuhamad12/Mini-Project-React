@@ -24,7 +24,6 @@ const Home = () => {
       <div className='trending'>
         <Favorite setShowMovie={setShowMovie}/>
         <TopRatedMovies showMovie={showMovie} setShowMovie={setShowMovie}/>
-      
       </div>
         <div className='continue'>
         <Continue />

@@ -4,7 +4,7 @@ import Upcoming from '../components/Upcoming'
 
 const Movies = () => {
   return (
-    <div>
+    <div className='moviesPage'>
       <NavigationBar />
       <Upcoming />
     </div>
