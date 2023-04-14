@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 const Favorite = ({setShowMovie}) => {
@@ -23,7 +24,9 @@ const Favorite = ({setShowMovie}) => {
       <Container>
         <Row>
           <h1 className="favoritemovies mt-4">Popular</h1>
-          {popular.slice(0,18).map((result) => {
+          <Link to="/movies" className="text-decoration-none seemore">See More</Link>
+
+          {popular.slice(0,12).map((result) => {
             return (
               <Col xs={6} s={4}sm={4} md={4} lg={3} xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 " >
                

@@ -1,14 +1,16 @@
 import React from 'react'
-import Favorite from '../components/Favorite'
+import FavoriteFull from '../components/FavoriteFull'
 import NavigationBar from '../components/NavigationBar'
-import TopRatedMovies from '../components/TopRatedMovies'
+import TopRatedMoviesFull from '../components/TopRatedMoviesFull'
+
+
 
 const Series = () => {
   return (
     <div className='seriesPage'>
         <NavigationBar />
-        <TopRatedMovies />
-        <Favorite />
+        <TopRatedMoviesFull />
+        <FavoriteFull />
     </div>
 
   )

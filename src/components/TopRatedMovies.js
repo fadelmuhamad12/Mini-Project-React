@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const TopRatedMovies = ({ setShowMovie }) => {
   const REACT_APP_IMG_URL = "https://image.tmdb.org/t/p/w500";
@@ -20,8 +21,14 @@ const TopRatedMovies = ({ setShowMovie }) => {
     <div className="TopRatedMovies">
       <Container>
         <Row>
-          <h1 className="favoritemovies mt-4">Top Rated</h1>
-          {topRated.map((result) => {
+         
+          <h1 className="favoritemovies mt-4 d-flex">Top Rated</h1>
+          <Link to="/series" className="text-decoration-none seemore">See More</Link>
+          
+
+        
+       
+          {topRated.slice(0,6).map((result) => {
             return (
               <Col  
               xs={6}

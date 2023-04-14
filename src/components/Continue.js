@@ -12,8 +12,8 @@ const Continue = () => {
   return (
     <Container>
       <Row>
+      <h1 className="favoritemovies mt-4 d-flex">Continue To Watch</h1>
         <div>
-          <h1 className="favoritemovies mt-4 d-flex">Continue To Watch</h1>
           <div className="wrapper">
             <Col xs={6} s={4} sm={4} md={4} lg={4} xl={4} className="justify-content-center text-align-center d-flex mt-3 moviesWrapperContinue ">
               <Card className="text-center cards bg-transparent ">

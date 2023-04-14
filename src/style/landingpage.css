@@ -70,11 +70,19 @@ a.nav-link:hover {
   border-right: none;
   border-top: none;
   border-bottom: none;
+  margin-bottom: 0px;
 }
 
 .overview {
   color: white;
   
+}
+
+/* See More */
+a.seemore {
+  color: #ffc907;
+  justify-content: end;
+  display: flex; 
 }
 
 

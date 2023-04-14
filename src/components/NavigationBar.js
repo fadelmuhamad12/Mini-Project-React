@@ -39,7 +39,7 @@ const NavigationBar = () => {
       className="navigationbar"
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand >
           F2k.<span className="stream">Stream</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
