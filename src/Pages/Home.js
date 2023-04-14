@@ -1,4 +1,3 @@
-import { Alert } from "bootstrap";
 import React, { useState } from "react";
 import Announcement from "../components/alert";
 import Continue from "../components/Continue";

@@ -23,7 +23,7 @@ const TopRatedMovies = ({ setShowMovie }) => {
         <Row>
          
           <h1 className="favoritemovies mt-4 d-flex">Top Rated</h1>
-          <Link to="/series" className="text-decoration-none seemore">See More</Link>
+          <Link to="/series" className="text-decoration-none seemore d-flex">See More</Link>
           
 
         
@@ -40,7 +40,7 @@ const TopRatedMovies = ({ setShowMovie }) => {
                 <Card className="text-center cards bg-transparent" onClick={()=>setShowMovie(result)}>
                   <div className="listcard">
                     <Image
-                      src={`${process.env.REACT_APP_IMG_URL}/${result.poster_path}`}
+                      src={`${REACT_APP_IMG_URL}/${result.poster_path}`}
                       className= "moviecardImages rounded"
                     ></Image>
                   </div>

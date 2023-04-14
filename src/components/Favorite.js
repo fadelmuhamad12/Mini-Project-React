@@ -24,7 +24,7 @@ const Favorite = ({setShowMovie}) => {
       <Container>
         <Row>
           <h1 className="favoritemovies mt-4">Popular</h1>
-          <Link to="/movies" className="text-decoration-none seemore">See More</Link>
+          <Link to="/movies" className="text-decoration-none seemore d-flex">See More</Link>
 
           {popular.slice(0,12).map((result) => {
             return (
