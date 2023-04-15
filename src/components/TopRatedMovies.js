@@ -14,7 +14,7 @@ const TopRatedMovies = ({ setShowMovie }) => {
     }).then(function (response) {
       setTopRated(response.data.results);
     });
-  });
+  }, []);
 
   return (
     <div className="TopRatedMovies">

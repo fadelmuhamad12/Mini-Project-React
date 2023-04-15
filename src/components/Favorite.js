@@ -15,7 +15,7 @@ const Favorite = ({setShowMovie}) => {
     }).then(function (response) {
       setPopular(response.data.results);
     });
-  });
+  }, []);
 
 
 
