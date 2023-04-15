@@ -12,7 +12,6 @@ const TopRatedMovies = ({ setShowMovie }) => {
       method: "get",
       url: "https://api.themoviedb.org/3/movie/top_rated?api_key=1a0d8643de94a0bdad2ec29735e6c342&language=en-US&page=1",
     }).then(function (response) {
-      console.log(response.data.results);
       setTopRated(response.data.results);
     });
   });
@@ -24,11 +23,7 @@ const TopRatedMovies = ({ setShowMovie }) => {
          
           <h1 className="favoritemovies mt-4 d-flex">Top Rated</h1>
           <Link to="/series" className="text-decoration-none seemore d-flex">See More</Link>
-          
-
-        
-       
-          {topRated.slice(0,6).map((result) => {
+          {topRated.slice(0,6).map((result,index) => {
             return (
               <Col  
               xs={6}
@@ -36,7 +31,7 @@ const TopRatedMovies = ({ setShowMovie }) => {
               sm={4}
               md={4}
               lg={3}
-              xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3">
+              xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3" key={index}>
                 <Card className="text-center cards bg-transparent" onClick={()=>setShowMovie(result)}>
                   <div className="listcard">
                     <Image

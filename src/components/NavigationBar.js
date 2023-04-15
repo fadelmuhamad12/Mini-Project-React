@@ -1,13 +1,17 @@
+import axios from "axios";
 import { useState } from "react";
 import { Navbar, Container, Nav, Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
-
+import { apiTmdb } from "../api/apiTmdb";
 
 const NavigationBar = () => {
   const [modal, showModal] = useState(false);
   const [modalPremium, showModalPremium] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const isLogin = JSON.parse(localStorage.getItem('session'))
 
   // Ini Buat Button menampilkan modal apabila akun di klik
   const handleModalShow = () => {
@@ -29,6 +33,55 @@ const NavigationBar = () => {
   };
   // END-----MODAL UNTUK PREMIUM+
 
+  const handleLogout = () => {
+    localStorage.clear()
+    window.location.reload()
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    await axios
+      .get(
+        "https://api.themoviedb.org/3/authentication/token/new?api_key=1a0d8643de94a0bdad2ec29735e6c342"
+      )
+      .then((response) => {
+        console.log(response);
+        apiTmdb
+          .post(
+            "authentication/token/validate_with_login",
+            {
+             username: username,
+             password: password,
+             request_token: response.data.request_token,
+            }
+          )
+          .then((response2) => {
+            axios
+              .post(
+                "https://api.themoviedb.org/3/authentication/session/new?api_key=1a0d8643de94a0bdad2ec29735e6c342",
+                {
+                  request_token: response.data.request_token,
+                }
+              )
+              .then((response3) => {
+                localStorage.setItem('session', JSON.stringify(response3.data.session_id))
+                axios
+                  .get(
+                    `https://api.themoviedb.org/3/account?api_key=1a0d8643de94a0bdad2ec29735e6c342&session_id=${response3.data.session_id}`,
+                   
+                  )
+                  .then((response4) => {
+                    window.location.reload();
+                    console.log(response4.data);
+                  });
+              });
+          });
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  }
+
   return (
     <Navbar
       collapseOnSelect
@@ -38,15 +91,21 @@ const NavigationBar = () => {
       className="navigationbar"
     >
       <Container>
-        <Navbar.Brand >
+        <Navbar.Brand>
           F2k.<span className="stream">Stream</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/" className="nav-link ">Home</Link>
-            <Link to="/series" className="nav-link">Series</Link>
-            <Link to="/movies" className="nav-link ">Movies</Link>
+            <Link to="/" className="nav-link ">
+              Home
+            </Link>
+            <Link to="/series" className="nav-link">
+              Series
+            </Link>
+            <Link to="/movies" className="nav-link ">
+              Movies
+            </Link>
             <Nav.Link href="#premium" onClick={clickedModalShow}>
               Premium +
             </Nav.Link>
@@ -75,18 +134,29 @@ const NavigationBar = () => {
         <Modal.Body>
           <Form>
             {/* {`${reqToken} ${createSessionWithLogin} ${createSession} ${getAccDetails}`} */}
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicEmail" >
               <Form.Label>Username/Email</Form.Label>
-              <Form.Control type="text" placeholder="Enter Username/Email" />
+              <Form.Control type="text" placeholder="Enter Username/Email" onChange={(e)=>setUsername(e.target.value)}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            {!isLogin ? ( <Button
+              variant="primary"
+              type="submit"
+              onClick={(e) => handleSubmit(e)}
+            >
               Login
-            </Button>
+            </Button>): (  <Button
+              variant="primary"
+              type="submit"
+              onClick={handleLogout}
+            >
+              Logout
+            </Button>)} 
+          
           </Form>
         </Modal.Body>
       </Modal>

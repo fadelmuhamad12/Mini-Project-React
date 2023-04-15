@@ -26,9 +26,9 @@ const Favorite = ({setShowMovie}) => {
           <h1 className="favoritemovies mt-4">Popular</h1>
           <Link to="/movies" className="text-decoration-none seemore d-flex">See More</Link>
 
-          {popular.slice(0,12).map((result) => {
+          {popular.slice(0,12).map((result,index) => {
             return (
-              <Col xs={6} s={4}sm={4} md={4} lg={3} xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 " >
+              <Col xs={6} s={4}sm={4} md={4} lg={3} xl={2} className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 " key={index} >
                
                 <Card className="text-center cards bg-transparent" onClick={()=> setShowMovie(result)} >
                   <div className="listcard" >

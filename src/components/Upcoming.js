@@ -39,7 +39,7 @@ const ComingSoon = () => {
     <Container>
       <Row>
         <h1 className="favoritemovies mt-4">Upcoming</h1>
-        {upcoming.slice(0, 12).map((result) => {
+        {upcoming.slice(0, 12).map((result, index) => {
           return (
             <Col
               xs={6}
@@ -48,7 +48,7 @@ const ComingSoon = () => {
               md={4}
               lg={3}
               xl={2}
-              className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 "
+              className="MoviesWrapper justify-content-center text-align-center d-flex mt-3 " key={index}
             >
               <Card
                 className="text-center cards bg-transparent "
