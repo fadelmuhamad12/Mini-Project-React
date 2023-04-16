@@ -1,4 +1,4 @@
-import { Card, Container, Row, Col, Image } from "react-bootstrap";
+import { Card, Col, Image } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Slider from "react-slick/lib/slider";
