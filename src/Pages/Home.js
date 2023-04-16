@@ -13,8 +13,7 @@ import Footer from "../components/Footer";
 
 const Home = () => {
   const [showMovie, setShowMovie] = useState([{}]);
-  const [modal, showModal] = useState(false);
-  const [selectedMovie, setSelectedMovie] = useState(null);
+
 
   return (
 

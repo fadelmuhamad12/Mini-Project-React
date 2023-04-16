@@ -40,8 +40,6 @@ const Continue = ({setShowMovie}) => {
   };
     
 
-
-  const REACT_APP_IMG_URL = "https://image.tmdb.org/t/p/original";
   const [show, setShow] = useState([]);
 
   useEffect(() => {
@@ -81,38 +79,7 @@ const Continue = ({setShowMovie}) => {
       </div>
     );
 
-    <Container>
-      <Row>
-        <h1 className="favoritemovies mt-4 d-flex">Continue To Watch</h1>
-        <div>
-          <div className="wrapper">
-            {show.slice(0,3).map((result, index) => {
-              return (
-                <Col
-                  xs={4}
-                  s={4}
-                  sm={4}
-                  md={4}
-                  lg={4}
-                  xl={4}
-                  className="justify-content-center text-align-center d-flex mt-3 moviesWrapperContinue "
-                key={index}
-                >
-                  <Card className="text-center cards bg-transparent ">
-                    <div className="card continue bg-transparent">
-                      <Image src={`${process.env.REACT_APP_IMG_URL}/${result.backdrop_path}`} className="imgContinue" />
-                      <div className="judul mt-2">
-                        <Card.Title>{result.name}</Card.Title>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>
-              );
-            })}
-          </div>
-        </div>
-      </Row>
-    </Container>
+    
  
 };
 

@@ -15,21 +15,21 @@ const Footer = () => {
       <div className="socials" id="medsos">
         {/* <p id="hit">Hit Me Up</p> */}
         <li>
-          <Link to={"https://www.instagram.com/fadelmuhamadp/"} target="_blank" >
+          <Link to={"https://www.instagram.com/fadelmuhamadp/"} >
           <FontAwesomeIcon icon={faMessage} beat />
           </Link>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/fadel-muhamad-prianto-009480150/"
-            target="_blank"
+           
           >
                      <FontAwesomeIcon icon={faInbox} beat style={{color: "#f7f7f7",}} />
 
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/fadelmuhamadp" target="_blank">
+          <a href="https://twitter.com/fadelmuhamadp">
           <FontAwesomeIcon icon={faUser} beat />
 
           </a>

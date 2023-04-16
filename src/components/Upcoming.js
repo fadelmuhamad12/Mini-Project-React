@@ -12,7 +12,7 @@ const ComingSoon = ({setShowMovie}) => {
   const [upcoming, setUpcoming] = useState([]);
 
   const [modal, showModal] = useState(false);
-  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [selectedMovie] = useState(null);
 
 
   const handleShowClose = () => {
