@@ -1,15 +1,21 @@
 import axios from "axios";
-import { useState } from "react";
-import { Navbar, Container, Nav, Form, Dropdown} from "react-bootstrap";
+import {  useState, useEffect } from "react";
+import { Navbar, Container, Nav, Form, Dropdown, Image} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 
+
 const NavigationBar = () => {
+  const REACT_APP_IMG_URL = "https://image.tmdb.org/t/p/w45"
   const [modal, showModal] = useState(false);
   const [modalPremium, showModalPremium] = useState(false);
+  const [modalProfile, setModalProfile] = useState(false);
+  const [avatar, setAvatar] = useState("");
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [id, setId] = useState("")
   const isLogin = JSON.parse(localStorage.getItem("session"));
   const isLogged = JSON.parse(localStorage.getItem("datas"));
 
@@ -26,17 +32,40 @@ const NavigationBar = () => {
   // MODAL UNTUK PREMIUM+
   const clickedModalShow = () => {
     showModalPremium(true);
+    
   };
+
 
   const clickedModalClose = () => {
     showModalPremium(false);
+   
   };
   // END-----MODAL UNTUK PREMIUM+
+
+  const clickedModalProfile =() => {
+    setModalProfile (true);
+  }
+
+  const clickedModalProfileClose =() => {
+    setModalProfile (false);
+  }
 
   const handleLogout = () => {
     localStorage.clear();
     window.location.reload();
   };
+
+  useEffect(() => {
+    // buat ngecek apakah usernya udh login dan data yg mau diambil ada di local storage
+    const storedData = localStorage.getItem("datas");
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      setAvatar(parsedData.avatar.tmdb.avatar_path);
+      setUsername(parsedData.username);
+      setId(parsedData.id)
+      setName(parsedData.name);
+    }
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -127,20 +156,22 @@ const NavigationBar = () => {
               />
             </Form>
             {isLogged ? (
-                <Dropdown className="d-inline mx-2">
-                <Dropdown.Toggle id="dropdown-autoclose-true">
-                  Welcome, Fadel
-                </Dropdown.Toggle>
+              <div className="profileLogin text-white mt-2" onClick={clickedModalProfile}>Profile</div>
+
+              //   <Dropdown className="btn-acc d-inline mx-1">
+              //   <Dropdown.Toggle id="dropdown-autoclose-true">
+              //     Welcome, {username}
+              //   </Dropdown.Toggle>
         
-                <Dropdown.Menu>
-                  <Dropdown.Item>Fadel</Dropdown.Item>
-                  <Dropdown.Item>382193819301</Dropdown.Item>
-                  <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+              //   <Dropdown.Menu>
+              //     <Dropdown.Item>Username: {username}</Dropdown.Item>
+              //     <Dropdown.Item>Id: {id}</Dropdown.Item>
+              //     <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+              //   </Dropdown.Menu>
+              // </Dropdown>
             ) : (
               <Nav.Link className="nav-link" onClick={handleModalShow}>
-                Akun
+                Login
               </Nav.Link>
             )}
           </Nav>
@@ -172,7 +203,7 @@ const NavigationBar = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            {!isLogin ? (
+            {/* {!isLogin ? (
               <Button
                 variant="primary"
                 type="submit"
@@ -184,8 +215,21 @@ const NavigationBar = () => {
               <Button variant="primary" type="submit" onClick={handleLogout}>
                 Logout
               </Button>
-            )}
+            )} */}
+                 <Button onChange={isLogin}
+                variant="primary"
+                type="submit"
+                onClick={(e) => handleSubmit(e)}
+              >
+                Login
+              </Button>
           </Form>
+          <div className="account text-align-center justify-content-center d-flex mt-5">
+            <p>Username: fadelmuhamadp</p>
+          </div>
+          <div className="pwd text-align-center justify-content-center d-flex">
+            <p>Password: 123123123</p>
+          </div>
         </Modal.Body>
       </Modal>
 
@@ -229,6 +273,26 @@ const NavigationBar = () => {
           </Form>
         </Modal.Body>
       </Modal>
+
+        {/* MODAL PROFILE */}
+      <Modal show={modalProfile} onHide={clickedModalProfileClose}>
+        <Modal.Header closeButton>
+          <Modal.Title className="titlePremiumProfile">Welcome !</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="profile">
+          <Image src={`${process.env.REACT_APP_IMG_URL}/${avatar}`} className="img-profile" />
+          <div className="username">Name: {name}</div>
+            <div className="username">Username: {username}</div>
+            <div className="username">Id: {id}</div>
+
+          </div>
+        <Button variant="danger" type="submit" className="btn-subs" onClick={handleLogout}>
+              Logout
+            </Button>
+        </Modal.Body>
+      </Modal>
+
     </Navbar>
   );
 };

@@ -5,13 +5,19 @@ import Favorite from "../components/Favorite";
 import Highlight from "../components/Highlight";
 import NavigationBar from "../components/NavigationBar";
 import Upcoming from "../components/Upcoming"
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "../style/landingpage.css";
 import TopRatedMovies from '../components/TopRatedMovies'
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [showMovie, setShowMovie] = useState([{}]);
+  const [modal, showModal] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   return (
+
     <div className='fullcover'>
     <div>
       <div className='myBg'>
@@ -20,16 +26,18 @@ const Home = () => {
         <Highlight showMovie={showMovie} setShowMovie={setShowMovie}/>
         {/* <Intro /> */}
       </div>
+      <div className='continue'>
+        <Continue showMovie={showMovie} setShowMovie={setShowMovie}/>
+        </div>
       <div className='trending'>
         <Favorite setShowMovie={setShowMovie}/>
         <TopRatedMovies showMovie={showMovie} setShowMovie={setShowMovie}/>
       </div>
-        <div className='continue'>
-        <Continue />
-        </div>
       <div className='soon'>
-      <Upcoming />
+      <Upcoming showMovie={showMovie} setShowMovie={setShowMovie} />
       </div>
+
+      <Footer />
 
     </div>
   </div>

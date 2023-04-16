@@ -75,21 +75,26 @@ const Favorite = () => {
                     backgroundImage: `url(${REACT_APP_IMG_URL}${selectedMovie.backdrop_path})`,
                   }}
                 >
+                  <div className="wrapper-Cards">
                   <Col>
                     <Image
                       src={`${process.env.REACT_APP_IMG_URL}/${selectedMovie.poster_path}`}
                       alt="Obx"
-                      className="moviecardImages rounded"
+                      className="moviecardImagesModals rounded"
                       closeButton
                     />
-                    <p className="title text-white">{selectedMovie.title}</p>
+                   
                   </Col>
                   <Col>
+                  <div className="textModals">
+                  <p className="title text-white">{selectedMovie.title}</p>
                     <p className="text-white">Id: {selectedMovie.id}</p>
                     <p className="text-white">
                       Popularity: {selectedMovie.vote_average}
                     </p>
+                    </div>
                   </Col>
+                  </div>
                 </div>
               </Row>
             )}

@@ -3,8 +3,6 @@ import FavoriteFull from '../components/FavoriteFull'
 import NavigationBar from '../components/NavigationBar'
 import TopRatedMoviesFull from '../components/TopRatedMoviesFull'
 
-
-
 const Series = () => {
   return (
     <div className='seriesPage'>

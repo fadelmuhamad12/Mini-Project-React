@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Griffy&family=Montserrat:ital,wght@0,100;0,400;1,600&family=Open+Sans:wght@700&family=Poppins:wght@100;400;600&family=Work+Sans:wght@500&display=swap');
 
 .fullcover {
   background: linear-gradient(179.71deg, #273343 0.25%, #161e29 84.69%);
@@ -34,6 +35,16 @@ a.nav-link:hover {
   align-items: end;
 } */
 
+
+/* Navbar */
+span.navbar-brand {
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+
+
+
 /* CARDS */
 .title {
   font-size: 30px;
@@ -41,6 +52,12 @@ a.nav-link:hover {
   line-height: 1;
   text-shadow: 2px 2px black;
   letter-spacing: 2px;
+}
+.cards:hover {
+  transform: scale(1.1);
+}
+.cards {
+  transition: transform 0.7s;
 }
 .trending {
   height: auto;
@@ -53,8 +70,8 @@ a.nav-link:hover {
 }
 
 .moviecardImages {
-  width: 160px;
-  height: 250px;
+  width: 190px;
+  height: 270px;
 }
 
 .judul {
@@ -93,6 +110,7 @@ a.seemore {
   padding: 50px;
   height: 800px;
   background-size: cover;
+  background-position: bottom
   
 
 }
@@ -100,6 +118,14 @@ a.seemore {
     color: white;
     margin-top: 400px;
     
+}
+
+h1.titleHighlight {
+  color: #FFC907;
+}
+
+p.overviewHighlight {
+  text-align: justify;
 }
 
 
@@ -111,12 +137,15 @@ div.continue {
 
 }
 
-.wrapper {
-  display: flex;
-}
-
 .imgContinue {
   border-radius: 20px;
+  cursor: pointer;
+}
+
+h1.continuemovies {
+  color: #ffc907;
+  margin-left: 5rem;
+  font-size: 30px;
 }
 
 
@@ -138,7 +167,7 @@ div.fade.alert{
 
 /* Modals */
 .modal-background {
-  height: 50%;
+  height: 700px;
   background-position: center;
   border-radius: 15px;
 
@@ -148,7 +177,6 @@ div.modal-content {
   background: #161e29;
   width: 100%;
   color: white;
-
 
 }
 
@@ -160,14 +188,220 @@ div.titlePremium.modal-title.h4 {
   color: white;
   margin-left: 30%;
 }
+div.titlePremiumProfile.modal-title.h4 {
+  margin-left: 35%;
+}
+
 
 .btn-subs {
   margin-left: 40%;
 }
 
+/* modal cards */
+.moviecardImagesModals {
+  width: 100px;
+
+}
+.titleModals {
+  font-size: 30px;
+  font-weight: bold;
+}
+.textModals  {
+  font-size: 15px;
+ 
+}
+
+
+.wrapper-Cards {
+  margin-top: 285px;
+}
+
 button.btn.btn-primary {
   margin-left: 40%;
+}
+/* Button */
+button#dropdown-autoclose-true{
+  background: none;
+  border: none;
+  margin-left: 0px;
+}
+
+
+/* FOOTER */
+.footer{
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  color: white;
+}
+.footer-content{
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content  h3{
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+  color: white;
+
+}
+.footer-content p {
+  max-width: 500px;
+  margin:10px auto;
+  line-height:  28px;
+  font-size: 14px;
+  color: white;
+}
+
+.socials{
+  list-style:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+ 
+}
+#linkme {
+  display: flex;
+}
+
+#toggle-show-hide{
+  border: 2px solid ;
+  width: 100px;
+  height: 50px;
+
+
+}
+#toggle-show-hide:hover{
+  background-color: #FFC907;
+}
+.socials li {
+  margin: 0 10px;
+
+}
+.socials a{
+  text-decoration: none;
+  color: white;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  transition: color .4s ease;
+}
+
+.soicals a:hover i{
+  color:aqua;
+}
+.footer-bottom {
+  background: black;
+  width:100vw;
+  padding:20px 0;
+  text-align: center;
+}
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
+
+/* END FOOTER */
+
+.img-profile {
+  width: 70px;
+  border-radius: 100%;
+  height: 70px;
+ margin-left: 40%;
+}
+
+.profileLogin{
+  cursor: pointer;
 }
 
 /* MEDIA QUERY */
 
+@media screen and (max-width: 1400px) {
+  .moviecardImages {
+    width: 170px;
+    height: 240px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .modal-background {
+    height: 700px;
+    background-position: center;
+    border-radius: 15px;
+  
+  }
+  div.modal-content {
+    width: 90%;
+  } 
+  .moviecardImages {
+    width: 150px;
+    height: 220px;
+  }
+ div.card-title.h5 {
+   font-size: 15px;
+ }
+ h1.continuemovies {
+  color: #ffc907;
+  margin-left: 1rem;
+  font-size: 20px;
+}
+}
+
+
+@media screen and (max-width: 450px) {
+  h1.titleHighlight {
+    color: #FFC907;
+  }
+  
+  p.overviewHighlight {
+    text-align: justify;
+    font-size: 14px;
+  }
+  
+  .modal-background {
+    height: 500px;
+    background-position: center;
+    border-radius: 15px;
+  
+  }
+  div.modal-content {
+    width: 90%;
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+
+  .moviecardImagesModals {
+    width: 100px;
+  
+  }
+  
+  .wrapper-Cards  {
+    margin-top: 120px;
+    font-size: 20px;
+  }
+  .textModals  {
+    font-size: 12px;
+   
+  }
+
+  .titleModals {
+    font-size: 20px;
+  }
+
+
+}

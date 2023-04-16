@@ -7,7 +7,7 @@ import '../style/landingpage.css';
 
 
 
-const ComingSoon = ({setShowMovie}) => {
+const UpcomingFull = () => {
   const REACT_APP_IMG_URL = "https://image.tmdb.org/t/p/original";
   const [upcoming, setUpcoming] = useState([]);
 
@@ -39,7 +39,7 @@ const ComingSoon = ({setShowMovie}) => {
     <Container>
       <Row>
         <h1 className="favoritemovies mt-4">Upcoming</h1>
-        {upcoming.slice(0, 12).map((result, index) => {
+        {upcoming.slice(0, 18).map((result, index) => {
           return (
             <Col
               xs={6}
@@ -52,7 +52,7 @@ const ComingSoon = ({setShowMovie}) => {
             >
               <Card
                 className="text-center cards bg-transparent "
-                onClick={() => setShowMovie(result)}
+                onClick={() => handleShowModal(result)}
               >
                 <div className="listcard">
                   <Image
@@ -81,21 +81,25 @@ const ComingSoon = ({setShowMovie}) => {
                   backgroundImage: `url(${REACT_APP_IMG_URL}${selectedMovie.backdrop_path})`,
                 }}
               >
+                <div className="wrapper-Cards">
                 <Col>
                   <Image
                     src={`${process.env.REACT_APP_IMG_URL}/${selectedMovie.poster_path}`}
                     alt="Obx"
-                    className="moviecardImages rounded"
+                    className="moviecardImagesModals rounded"
                     closeButton
                   />
-                  <p className="title text-white">{selectedMovie.title}</p>
+                  <p className="titleModals text-white">{selectedMovie.title}</p>
                 </Col>
                 <Col>
-                  <p className="text-white">Id: {selectedMovie.id}</p>
-                  <p className="text-white">
+                <div className="textModals">
+                  <p>Id: {selectedMovie.id}</p>
+                  <p>
                     Popularity: {selectedMovie.vote_average}
                   </p>
+                  </div>
                 </Col>
+                </div>
               </div>
             </Row>
           )}
@@ -106,4 +110,4 @@ const ComingSoon = ({setShowMovie}) => {
   );
 };
 
-export default ComingSoon;
+export default UpcomingFull;
