@@ -1,13 +1,13 @@
 import axios from "axios";
 import {  useState, useEffect } from "react";
-import { Navbar, Container, Nav, Form, Dropdown, Image} from "react-bootstrap";
+import { Navbar, Container, Nav, Form, Image} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 
 
 const NavigationBar = () => {
-  const REACT_APP_IMG_URL = "https://image.tmdb.org/t/p/w45"
+
   const [modal, showModal] = useState(false);
   const [modalPremium, showModalPremium] = useState(false);
   const [modalProfile, setModalProfile] = useState(false);
