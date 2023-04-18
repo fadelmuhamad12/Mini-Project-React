@@ -18,7 +18,7 @@ const ComingSoon = ({setShowMovie}) => {
   const handleShowClose = () => {
     showModal(false);
   };
-
+  // Jika pertama kali di reload maka akan mendapatkan data ini dan di munculin pake mapping
   useEffect(() => {
     axios({
       method: "get",
